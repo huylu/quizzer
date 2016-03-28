@@ -7,7 +7,7 @@ import (
 	"fmt"
 	"runtime"
 	"github.com/gin-gonic/gin"
-	"github.com/thangchung/quiz/utils"
+	"github.com/thangchung/quiz-server/utils"
 )
 
 const SERVER_PORT = ":6868"
