@@ -1,4 +1,4 @@
-import { ADD_QUIZ } from '../constants/ActionTypes'
+import {ADD_QUIZ} from '../constants/ActionTypes'
 
 const initialState = [
   {
@@ -8,7 +8,7 @@ const initialState = [
   }
 ]
 
-export default function quizzes(state = initialState, action) {
+export default function dashboards(state = initialState, action) {
   switch (action.type) {
     case ADD_QUIZ:
       return state

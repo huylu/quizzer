@@ -37,8 +37,9 @@ func StartGin() {
   router.Static("/dist", "dist")
 
   router.GET("/", index)
-  router.GET("/quiz", getQuizList)
-  router.GET("/quiz/:id", getQuizById)
+  router.GET("/quizz", getQuizList)
+  router.GET("/quizz/:id", getQuizById)
+  router.NoRoute(index)
 
   fmt.Printf("Application is running at http://localhost%s/", SERVER_PORT)
   router.Run(SERVER_PORT)

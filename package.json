@@ -6,7 +6,7 @@
   "scripts": {
     "start": "go run main.go",
     "build": "./node_modules/.bin/webpack --watch",
-    "lint": "eslint static",
+    "lint": "eslint static/js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -32,11 +32,14 @@
     "babel-preset-react-hmre": "^1.1.1",
     "babel-register": "^6.3.13",
     "copy-webpack-plugin": "^1.1.1",
+    "css-loader": "^0.23.1",
     "eslint": "^2.5.3",
     "eslint-config-rackt": "^1.1.1",
     "eslint-plugin-react": "^4.2.3",
-    "express": "^4.13.4",
+    "node-sass": "^3.4.2",
     "path": "^0.12.7",
+    "sass-loader": "^3.2.0",
+    "style-loader": "^0.13.1",
     "webpack": "^1.12.14",
     "webpack-dev-middleware": "^1.6.1",
     "webpack-hot-middleware": "^2.10.0"
@@ -45,9 +48,14 @@
     "babel-polyfill": "^6.3.14",
     "bootstrap-material-design": "^4.0.1",
     "classnames": "^2.1.2",
+    "invariant": "^2.2.1",
     "react": "^0.14.7",
     "react-dom": "^0.14.7",
-    "react-redux": "^4.2.1",
-    "redux": "^3.2.1"
+    "react-redux": "^4.4.1",
+    "redux": "^3.2.1",
+    "react-router": "^2.0.1",
+    "react-router-redux": "^4.0.1",
+    "redux-logger": "^2.6.1",
+    "redux-thunk": "^2.0.1"
   }
 }

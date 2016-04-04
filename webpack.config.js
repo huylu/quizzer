@@ -8,7 +8,8 @@ module.exports = {
   devtool: 'cheap-module-eval-source-map',
   entry: [
     'webpack-hot-middleware/client',
-    './static/index'
+    // './static/css/index.scss', // FIXME: will fix after bootstrap-material-design fixed their issue
+    './static/js/index'
   ],
   output: {
     path: path.join(__dirname, 'dist'),
@@ -31,10 +32,12 @@ module.exports = {
         include: __dirname
       },
       {
-        test: /\.css?$/,
-        loaders: ['style', 'raw'],
-        include: __dirname
+        test: /\.scss?$/,
+        loaders: ['style', 'css', 'sass']
       }
     ]
+  },
+  sassLoader: {
+    includePaths: [path.resolve(__dirname, "./static/css")]
   }
 }
