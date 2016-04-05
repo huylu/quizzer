@@ -32,15 +32,27 @@ func StartGin() {
   gin.SetMode(gin.ReleaseMode)
 
   router := gin.Default()
-  router.Use(utils.RateLimit, gin.Recovery())
+  router.Use(utils.RateLimit, gin.Logger(), gin.Recovery())
+  authMiddleware := utils.GetAuthMiddleware()
+
+  // static resources
   router.LoadHTMLGlob("resources/*.html")
   router.Static("/dist", "dist")
 
+  // authentication routing
   router.GET("/", index)
-  router.GET("/quizz", getQuizList)
-  router.GET("/quizz/:id", getQuizById)
+  router.POST("/login", authMiddleware.LoginHandler)
   router.NoRoute(index)
 
+  // auth group
+  auth := router.Group("/auth")
+  auth.Use(authMiddleware.MiddlewareFunc())
+  {
+    auth.GET("/quizz", getQuizList)
+    auth.GET("/quizz/:id", getQuizById)
+  }
+
+  // start server
   fmt.Printf("Application is running at http://localhost%s/", SERVER_PORT)
   router.Run(SERVER_PORT)
 }
