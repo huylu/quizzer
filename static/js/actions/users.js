@@ -1,5 +1,6 @@
 import {push} from 'react-router-redux'
 import Constants from '../constants/index'
+import {getStorageUserKey} from '../utils/index'
 
 const Actions = {
   signIn: (username, password) => {
@@ -12,7 +13,11 @@ const Actions = {
       }
 
       if (data.user.username === 'admin' && data.user.password === '123456') {
-        localStorage.setItem('oqa_token', 'fb92c451-eaf3-4995-bc29-f97efdd335a6')
+        localStorage.setItem(getStorageUserKey(), 'fb92c451-eaf3-4995-bc29-f97efdd335a6')
+        dispatch({
+          type: Constants.CURRENT_USER,
+          currentUser: data.user
+        });
         dispatch(push('/'))
       } else {
         dispatch({
@@ -20,6 +25,12 @@ const Actions = {
           error: 'login failed'
         })
       }
+    }
+  },
+  signOut: () => {
+    return dispatch => {
+      localStorage.removeItem(getStorageUserKey())
+      dispatch(push('/sign_in'))
     }
   }
 }

@@ -9,8 +9,5 @@ class AboutShowView extends React.Component {
   }
 }
 
-const mapStateToProps = (state) => (
-  state
-)
-
+const mapStateToProps = (state) => (state)
 export default connect(mapStateToProps)(AboutShowView)
