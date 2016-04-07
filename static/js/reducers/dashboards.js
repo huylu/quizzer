@@ -1,6 +1,5 @@
-import {ADD_QUIZ} from '../constants/ActionTypes'
-import {defaultDashboards} from './defaultData'
-
+import {ADD_QUIZ} from '../constants/action_types'
+import {defaultDashboards} from './default_data'
 
 export default function dashboards(state = defaultDashboards, action) {
   switch (action.type) {
