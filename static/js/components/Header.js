@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {Link} from 'react-router'
 import Actions from '../actions/users'
+import {getLocalStorageObject} from '../utils/index'
 
 export default class Header extends Component {
   constructor(props) {
@@ -34,7 +35,7 @@ export default class Header extends Component {
           <ul className="nav navbar-nav pull-sm-right">
             <li className="nav-item dropdown">
               <a className="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
-                 aria-expanded="false">{this.props.currentUser.username}</a>
+                 aria-expanded="false">{getLocalStorageObject()}</a>
               <div className="dropdown-menu dropdown-menu-right">
                 <a className="dropdown-item" href="#">Change Password</a>
                 <a className="dropdown-item" href="#">Settings</a>

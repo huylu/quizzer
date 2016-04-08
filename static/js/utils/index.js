@@ -5,3 +5,7 @@ export function setDocumentTitle(title) {
 export function getStorageUserKey() {
   return 'oqa_token'
 }
+
+export function getLocalStorageObject(key = getStorageUserKey()) {
+  return localStorage.getItem(key)
+}

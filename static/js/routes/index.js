@@ -7,11 +7,11 @@ import HomeIndexView from '../views/home/index'
 import AboutShowView from '../views/about/index'
 import NotFoundView from '../views/not_found'
 import SignInView from '../views/user/sign_in'
-import {getStorageUserKey} from '../utils/index'
+import {getLocalStorageObject} from '../utils/index'
 
 export default function configRoutes(store) {
   const _ensureAuthenticated = (nextState, replace, callback) => {
-    if(!localStorage.getItem(getStorageUserKey())) {
+    if(!getLocalStorageObject()) {
       replace('/sign_in')
     }
     callback()

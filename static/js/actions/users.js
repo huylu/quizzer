@@ -13,7 +13,7 @@ const Actions = {
       }
 
       if (data.user.username === 'admin' && data.user.password === '123456') {
-        localStorage.setItem(getStorageUserKey(), 'fb92c451-eaf3-4995-bc29-f97efdd335a6')
+        localStorage.setItem(getStorageUserKey(), data.user.username)
         dispatch({
           type: Constants.CURRENT_USER,
           currentUser: data.user
