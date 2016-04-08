@@ -1,19 +1,18 @@
 import React from 'react'
 import {connect} from 'react-redux'
+import QuizzTable from '../../components/quizzes/quizz_table'
 
 class HomeIndexView extends React.Component {
   render() {
-    const inline = {
-      height: "200px"
-    }
-
     return (
-        <div style={inline}>
-          <h2>Hello world!!!</h2>
+        <div>
+          <QuizzTable quizzes={this.props.quizzes}/>
         </div>
     )
   }
 }
 
-const mapStateToProps = (state) => (state)
+const mapStateToProps = (state) => ({
+  quizzes: state.quizzes
+})
 export default connect(mapStateToProps)(HomeIndexView)

@@ -12,7 +12,7 @@ class AuthenticatedContainer extends React.Component {
     return (
         <div>
           <Header/>
-          <div className="main-container">
+          <div className="container-fluid">
             {this.props.children}
           </div>
           <Footer />

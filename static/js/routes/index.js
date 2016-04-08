@@ -11,7 +11,7 @@ import {getLocalStorageObject} from '../utils/index'
 
 export default function configRoutes(store) {
   const _ensureAuthenticated = (nextState, replace, callback) => {
-    if(!getLocalStorageObject()) {
+    if (!getLocalStorageObject()) {
       replace('/sign_in')
     }
     callback()
