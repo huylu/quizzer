@@ -1,6 +1,7 @@
 import React from 'react'
+import {Link} from 'react-router'
 
-export default class QuizzItem extends React.Component {
+export default class QuizItem extends React.Component {
   render() {
     return (
         <div className="col-md-6">
@@ -11,11 +12,11 @@ export default class QuizzItem extends React.Component {
             </h3>
             <p className="card-text">{this.props.description}</p>
             <a href="#" className="btn btn-primary">Start</a>
-            <a href="#" className="btn btn-info">Detail</a>
+            <Link to={{ pathname: '/quiz/' + this.props.id }} className="btn btn-info">Detail</Link>
           </div>
         </div>
     )
   }
 }
 
-QuizzItem.propTypes = {}
+QuizItem.propTypes = {}

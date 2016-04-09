@@ -11,7 +11,8 @@
     "classes": true,
     "forOf": true,
     "blockBindings": true,
-    "arrowFunctions": true
+    "arrowFunctions": true,
+    "spread": true
   },
   "rules": {
     "valid-jsdoc": 2,

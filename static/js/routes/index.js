@@ -4,6 +4,7 @@ import {push} from 'react-router-redux'
 import MainLayout from '../layouts/main'
 import AuthenticatedContainer from '../containers/authenticated'
 import HomeIndexView from '../views/home/index'
+import QuizDetailView from '../views/quiz/quiz_detail'
 import AboutShowView from '../views/about/index'
 import NotFoundView from '../views/not_found'
 import SignInView from '../views/user/sign_in'
@@ -22,6 +23,7 @@ export default function configRoutes(store) {
         <Route path="/sign_in" component={SignInView}/>
         <Route path="/" component={AuthenticatedContainer} onEnter={_ensureAuthenticated}>
           <IndexRoute component={HomeIndexView}/>
+          <Route path="/quiz/:id" component={QuizDetailView}/>
           <Route path="about" component={AboutShowView}/>
         </Route>
         <Route path="*" component={NotFoundView}/>

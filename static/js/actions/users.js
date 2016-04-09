@@ -17,7 +17,7 @@ const Actions = {
         dispatch({
           type: Constants.CURRENT_USER,
           currentUser: data.user
-        });
+        })
         dispatch(push('/'))
       } else {
         dispatch({
@@ -30,6 +30,7 @@ const Actions = {
   signOut: () => {
     return dispatch => {
       localStorage.removeItem(getStorageUserKey())
+      dispatch({type: Constants.USER_SIGNED_OUT});
       dispatch(push('/sign_in'))
     }
   }

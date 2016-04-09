@@ -1,13 +1,12 @@
 import React from 'react'
-import QuizzItem from './quizz_item'
-import classnames from 'classnames'
+import QuizItem from './quiz_item'
 
-export default class QuizzTable extends React.Component {
+export default class QuizTable extends React.Component {
   render() {
     const items = this.props.quizzes.map(q => {
       return (
           <div>
-            <QuizzItem key={q.id} {...q} />
+            <QuizItem key={q.id} {...q} />
           </div>
       )
     })
@@ -24,4 +23,4 @@ export default class QuizzTable extends React.Component {
   }
 }
 
-QuizzTable.propTypes = {}
+QuizTable.propTypes = {}

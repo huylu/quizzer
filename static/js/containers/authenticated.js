@@ -2,10 +2,12 @@ import React from 'react'
 import {connect} from 'react-redux'
 import Header from '../components/header'
 import Footer from '../components/footer'
+import Actions from '../actions/quizzes'
 
 class AuthenticatedContainer extends React.Component {
   componentDidMount() {
     const {dispatch} = this.props
+    dispatch(Actions.fetchQuizzes())
   }
 
   render() {
@@ -21,5 +23,7 @@ class AuthenticatedContainer extends React.Component {
   }
 }
 
-const mapStateToProps = (state) => (state)
-export default connect(mapStateToProps())(AuthenticatedContainer)
+const mapStateToProps = (state) => ({
+  quizzes: state.quizzes
+})
+export default connect(mapStateToProps)(AuthenticatedContainer)

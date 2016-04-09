@@ -27,7 +27,7 @@ class SignInView extends React.Component {
     let {error} = this.props.user
     if (!error) return false
     return (
-        <div className="error">
+        <div className="bg-danger">
           {error}
         </div>
     )

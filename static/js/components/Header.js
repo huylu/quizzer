@@ -23,10 +23,10 @@ export default class Header extends Component {
           </div>
           <ul className="nav navbar-nav">
             <li className="nav-item">
-              <Link className="nav-link" to="/">Home</Link>
+              <Link className="nav-link" to="/" activeClassName="active">Home</Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="about">About</Link>
+              <Link className="nav-link" to="about" activeClassName="active">About</Link>
             </li>
           </ul>
           <ul className="nav navbar-nav pull-sm-right">

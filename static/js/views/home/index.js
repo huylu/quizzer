@@ -1,18 +1,19 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import QuizzTable from '../../components/quizzes/quizz_table'
+import QuizTable from '../../components/quiz/quiz_table'
 
 class HomeIndexView extends React.Component {
   render() {
+    const receivedQuizzes = this.props.receivedQuizzes
     return (
         <div>
-          <QuizzTable quizzes={this.props.quizzes}/>
+          <QuizTable quizzes={receivedQuizzes}/>
         </div>
     )
   }
 }
 
-const mapStateToProps = (state) => ({
-  quizzes: state.quizzes
-})
+const mapStateToProps = (state) => (
+  state.quizzes
+)
 export default connect(mapStateToProps)(HomeIndexView)
