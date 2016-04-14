@@ -1,14 +1,30 @@
 import React from 'react'
 
 export default class QuizModalView extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = props.quiz
-  }
-
   render() {
+    const {quiz} = this.props
+    const {questions} = quiz
     const inline = {
       'margin': '20px 0'
+    }
+
+    let questionList = null
+    if (questions != null && questions.length > 0) {
+      let i = 1;
+      questionList = questions.map(q => {
+        return (
+            <div className="list-group">
+              <a href="#" className="list-group-item">
+                <h4 className="list-group-item-heading">
+                  Question {i++}
+                </h4>
+                <p className="list-group-item-text">
+                  {q.content}
+                </p>
+              </a>
+            </div>
+        )
+      })
     }
 
     return (
@@ -21,7 +37,7 @@ export default class QuizModalView extends React.Component {
                     type="text"
                     id="name"
                     className="form-control"
-                    placeholder={this.state.name}/>
+                    placeholder="title" defaultValue={quiz.name}/>
               </div>
               <div className="form-group">
                 <label for="name">Description</label>
@@ -29,7 +45,10 @@ export default class QuizModalView extends React.Component {
                     type="text"
                     id="description"
                     className="form-control"
-                    placeholder={this.state.description}/>
+                    placeholder="description" defaultValue={quiz.description}/>
+              </div>
+              <div className="form-group">
+                {questionList}
               </div>
             </fieldset>
           </form>
@@ -37,3 +56,5 @@ export default class QuizModalView extends React.Component {
     )
   }
 }
+
+QuizModalView.propTypes = {}

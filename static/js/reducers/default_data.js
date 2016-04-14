@@ -6,3 +6,7 @@ export const defaultUser = {
 export const defaultQuizzes = {
   receivedQuizzes: []
 }
+
+export const defaultCurrentQuiz = {
+  quiz: null
+}
