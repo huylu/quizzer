@@ -4,6 +4,7 @@ import {browserHistory} from 'react-router'
 import {syncHistoryWithStore} from 'react-router-redux'
 import configureStore from './store/index'
 import App from './containers/App'
+import '../css/index.scss'
 
 const store = configureStore(browserHistory)
 

@@ -5,73 +5,73 @@ export default [
     id: 'fb92c451-eaf3-4995-bc29-f97efdd335a6',
     questions: [
       {
-        id: '',
+        id: 1,
         content: 'A user is able to pass malicious input that invokes control codes in your Web application. Which vulnerability is most likely to occur in your Web application?',
         type: 1, // single choice
         correct_answer: '',
         answers: [
           {
-            id: '',
+            id: 2,
             content: 'Injection'
           },
           {
-            id: '',
+            id: 3,
             content: 'Insecure direct object references'
           },
           {
-            id: '',
+            id: 4,
             content: 'Failure to restrict URL access'
           },
           {
-            id: '',
+            id: 5,
             content: 'Insufficient transport layer protection'
           }
         ]
       },
       {
-        id: '',
+        id: 6,
         content: 'Which of the following languages are the primary targets of cross-site scripting?',
         type: 1, // single choice
         correct_answer: '',
         answers: [
           {
-            id: '',
+            id: 7,
             content: 'HTML'
           },
           {
-            id: '',
+            id: 8,
             content: 'SQL'
           },
           {
-            id: '',
+            id: 9,
             content: 'XSLT'
           },
           {
-            id: '',
+            id: 10,
             content: 'XPath'
           }
         ]
       },
       {
-        id: '',
+        id: 11,
         content: 'Which of the following attacks occurs when a malicious user convinces a victim to send a request to a server with malicious input and the server echoes the input back to client?',
         type: 1, // single choice
         correct_answer: '',
         answers: [
           {
-            id: '',
+            id: 12,
             content: 'Reflected XSS'
           },
           {
-            id: '',
+            id: 13,
             content: 'Persistent XSS'
           },
           {
-            id: '',
+            id: 14,
             content: 'Insecure direct object references'
           },
           {
-            id: '',
+            id: 15,
             content: 'Failure to restrict URL access'
           }
         ]

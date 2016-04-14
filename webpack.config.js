@@ -25,10 +25,11 @@ module.exports = {
         }
       },
       {
-        test: /\.css$/,
+        test: /\.scss$/,
         loaders: [
           'style',
-          'css'
+          'css',
+          'sass'
         ]
       },
       {
@@ -40,6 +41,9 @@ module.exports = {
         ]
       }
     ]
+  },
+  sassLoader: {
+    includePaths: [path.resolve(__dirname, "./static/css")]
   },
   resolve: {
     extensions: ['', '.js', '.jsx'],

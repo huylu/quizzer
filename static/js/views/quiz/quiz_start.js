@@ -1,12 +1,11 @@
-import React from 'react'
+import React from "react";
 import {connect} from 'react-redux'
-import QuizModal from '../../components/quiz/quiz_modal'
 import {setDocumentTitle} from '../../utils/index'
 import Actions from '../../actions/current_quiz'
 
-class QuizDetailView extends React.Component {
+class QuizStartView extends React.Component {
   componentDidMount() {
-    setDocumentTitle('Quiz Detail')
+    setDocumentTitle('Quiz Testing')
     this.props.dispatch(Actions.fetchQuizById(this.props.params.id))
   }
 
@@ -15,16 +14,18 @@ class QuizDetailView extends React.Component {
     if (!quiz) return false;
 
     return (
-        <div>
-          <QuizModal quiz={quiz}/>
+        <div className="page-section">
+          <div>Question {quiz.questions.length}</div>
+          <div>Score 300pt</div>
         </div>
     )
   }
 }
 
-QuizDetailView.propTypes = {}
+QuizStartView.propTypes = {}
 
 const mapStateToProps = (state) => ({
   current_quiz: state.current_quiz
 })
-export default connect(mapStateToProps)(QuizDetailView)
+
+export default connect(mapStateToProps)(QuizStartView)
