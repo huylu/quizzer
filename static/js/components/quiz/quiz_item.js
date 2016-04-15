@@ -17,7 +17,7 @@ export default class QuizItem extends React.Component {
             </h3>
             <p className="card-text">{this.props.description}</p>
             <Link to={{ pathname: '/quiz/' + this.props.id + '/start' }}
-                  className={classNames('btn btn-primary active', disabledStyle)}>Take a quiz</Link>
+                  className={classNames('btn btn-default active', disabledStyle)}>Take a quiz</Link>
           </div>
         </div>
     )
