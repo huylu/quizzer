@@ -4,8 +4,10 @@
   "description": "The quizzer for the online quiz composing and testing",
   "main": "index.js",
   "scripts": {
+    "clean": "rimraf dist",
     "start": "go run main.go",
-    "build": "set NODE_ENV=prodution&&webpack --progress",
+    "build:webpack": "cross-env NODE_ENV=production&&webpack --progress",
+    "build": "npm run clean &&npm run build:webpack",
     "lint": "eslint static/js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -32,12 +34,14 @@
     "babel-preset-es2015-native-modules": "^6.6.0",
     "babel-preset-react": "^6.5.0",
     "babel-register": "^6.3.13",
+    "cross-env": "^1.0.7",
     "css-loader": "^0.23.1",
     "eslint": "^2.5.3",
     "eslint-config-rackt": "^1.1.1",
     "eslint-plugin-react": "^4.2.3",
     "node-sass": "^3.4.2",
     "path": "^0.12.7",
+    "rimraf": "^2.4.3",
     "sass-loader": "^3.2.0",
     "style-loader": "^0.13.1",
     "webpack": "^2.1.0-beta.4"

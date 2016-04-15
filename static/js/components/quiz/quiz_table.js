@@ -5,7 +5,7 @@ export default class QuizTable extends React.Component {
   render() {
     const items = this.props.quizzes.map(q => {
       return (
-          <div>
+          <div className="row">
             <QuizItem key={q.id} {...q} />
           </div>
       )

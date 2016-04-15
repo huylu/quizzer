@@ -79,31 +79,31 @@ export default [
     ]
   },
   {
-    name: '.NET Core exam',
+    name: '.NET Core quiz',
     description: 'The examination about all new things in .NET core',
     id: '09f99182-a410-4541-8ab2-2efa2565040f',
     questions: []
   },
   {
-    name: 'NodeJS exam',
+    name: 'NodeJS quiz',
     description: 'The examination about NodeJS core concepts',
     id: '6e2979c7-3617-4f43-ac7a-5e9c657b88fc',
     questions: []
   },
   {
-    name: 'Golang concurrency exam',
+    name: 'Golang concurrency quiz',
     description: 'The examination about concurrency in golang',
     id: '27c4345c-a32d-4e1a-9412-bd3144a3782b',
     questions: []
   },
   {
-    name: 'Microservices exam',
+    name: 'Microservices quiz',
     description: 'What we need to know about Microservices',
     id: 'e54816d6-e5e3-4cc8-949c-f04f25c2b824',
     questions: []
   },
   {
-    name: 'IOT exam',
+    name: 'IOT quiz',
     description: 'What is Internet of thing playing in the world',
     id: 'c16fbfb6-1f03-425f-8f25-9066dad1e7ff',
     questions: []

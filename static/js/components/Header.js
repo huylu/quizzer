@@ -17,9 +17,9 @@ export default class Header extends Component {
 
   render() {
     return (
-        <div className="navbar navbar-dark bg-primary">
+        <div className="navbar bg-default">
           <div className="navbar-brand" href="#">
-            OQA
+            Online Quiz App
           </div>
           <ul className="nav navbar-nav">
             <li className="nav-item">

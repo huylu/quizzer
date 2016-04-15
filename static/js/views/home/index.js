@@ -11,7 +11,17 @@ class HomeIndexView extends React.Component {
   render() {
     return (
         <div>
-          <QuizTable quizzes={this.props.quizzes}/>
+          <div className="bd-pageheader">
+            <div className="container">
+              <h1>Dashboard Information</h1>
+              <p className="lead">
+                The quizzer application that allows an user to composing and doing a testing online...
+              </p>
+            </div>
+          </div>
+          <div className="container">
+            <QuizTable quizzes={this.props.quizzes}/>
+          </div>
         </div>
     )
   }

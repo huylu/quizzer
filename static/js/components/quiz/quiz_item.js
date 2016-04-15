@@ -9,15 +9,15 @@ export default class QuizItem extends React.Component {
       disabledStyle = {disabled: 'disabled'}
     }
     return (
-        <div className="col-md-6">
+        <div className="col-sm-12">
           <div className="card card-block">
             <h3 className="card-title">
-              Quiz Name: {this.props.name}
+              <Link to={{ pathname: '/quiz/' + this.props.id }}
+                    className="btn btn-info align-left">{this.props.name}</Link>
             </h3>
             <p className="card-text">{this.props.description}</p>
             <Link to={{ pathname: '/quiz/' + this.props.id + '/start' }}
-                  className={classNames('btn btn-primary', disabledStyle)}>Start</Link>
-            <Link to={{ pathname: '/quiz/' + this.props.id }} className="btn btn-info">Detail</Link>
+                  className={classNames('btn btn-primary active', disabledStyle)}>Take a quiz</Link>
           </div>
         </div>
     )
