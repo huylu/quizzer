@@ -1,6 +1,8 @@
 # Quizzer
 [![Go Report Card](http://goreportcard.com/badge/thangchung/quizzer)](http://goreportcard.com/report/thangchung/quizzer)
+
 > Quizzer is very much a work in progress
+
 The quizzer application that allows an user to composing and doing a testing online.
 
 # How to run it
