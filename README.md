@@ -1,5 +1,7 @@
 # Quizzer
+
 [![Go Report Card](http://goreportcard.com/badge/thangchung/quizzer)](http://goreportcard.com/report/thangchung/quizzer)
+[![WTFPL License](https://img.shields.io/badge/licence-WTFPL-green.svg)](https://github.com/thangchung/quizzer/blob/master/LICENSE)
 
 > Quizzer is very much a work in progress
 
