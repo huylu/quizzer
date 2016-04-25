@@ -7,7 +7,7 @@
 
 The quizzer application that allows an user to composing and doing a testing online.
 
-# How to run it
+# Run it
 
 * Make sure you have [golang](https://golang.org) and [nodejs](https://nodejs.org) are installed in your box.
 * `npm install` for installing quizzer's necessary libs
