@@ -30,7 +30,7 @@ const Actions = {
   signOut: () => {
     return dispatch => {
       localStorage.removeItem(getStorageUserKey())
-      dispatch({type: Constants.USER_SIGNED_OUT});
+      dispatch({type: Constants.USER_SIGNED_OUT})
       dispatch(push('/sign_in'))
     }
   }
