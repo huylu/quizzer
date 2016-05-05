@@ -6,7 +6,7 @@
   "scripts": {
     "clean": "rimraf dist",
     "start": "go run main.go",
-    "build:webpack": "cross-env NODE_ENV=production&&webpack --progress",
+    "build:webpack": "cross-env NODE_ENV=production&&./node_modules/.bin/webpack --progress",
     "build": "npm run clean &&npm run build:webpack",
     "lint": "eslint static/js",
     "test": "echo \"Error: no test specified\" && exit 1"
