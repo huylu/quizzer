@@ -7,10 +7,17 @@
 
 The quizzer application that allows an user to composing and doing a testing online.
 
-# Run it
+# Run in local development
 
 * Make sure you have [golang](https://golang.org) and [nodejs](https://nodejs.org) are installed in your box.
 * `npm install` for installing quizzer's necessary libs
 * `npm run build` for building and watching the client development.
 * `npm start` for running the web server and booting up the quizzer.
-* That's it.
+
+# Run in Docker environment
+
+* `npm install`
+* `npm run build`
+* `docker build -t thangchung/quizzer .`
+* `docker run -p 6868:6868 -d thangchung/quizzer`
+

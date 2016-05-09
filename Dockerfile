@@ -1,45 +1,31 @@
-FROM golang:1.6.2
+FROM golang:1.6.2-alpine
 
 MAINTAINER Thang Chung "thangchung@ymail.com"
 
-# https://github.com/nodejs/docker-node/blob/master/6.0/Dockerfile
-# gpg keys listed at https://github.com/nodejs/node
-RUN set -ex \
-  && for key in \
-    9554F04D7259F04124DE6B476D5A82AC7E37093B \
-    94AE36675C464D64BAFA68DD7434390BDBE9B9C5 \
-    0034A06D9D9B0064CE8ADF6BF1747F4AD2306D93 \
-    FD3A5288F042B6850C66B31F09FE44734EB7990E \
-    71DCFD284A79C3B38668286BC97EC7A07EDE3FC1 \
-    DD8F2338BAE7501E3DD5AC78C273792F7D83545D \
-    B9AE9905FFD7803F25714661B63B535A4C206CA9 \
-    C4F0DFFF4E8C1A8236409D08E73BC641CC11F4C8 \
-  ; do \
-    gpg --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; \
-  done
+# Define all environment variables
+ENV PORT 6868
+ENV DIR_PATH /go/src/github.com/thangchung/quizzer
 
-ENV NPM_CONFIG_LOGLEVEL info
-ENV NODE_VERSION 6.1.0
-ENV NPM_VERSION 3.9.0
+# Install needed packages
+RUN apk update && apk add curl git mercurial && rm -rf /var/cache/apk/*
 
-RUN curl -SLO "https://nodejs.org/dist/latest-v6.x/node-v$NODE_VERSION-linux-x64.tar.xz" \
-  && curl -SLO "https://nodejs.org/dist/latest-v6.x/SHASUMS256.txt.asc" \
-  && gpg --batch --decrypt --output SHASUMS256.txt SHASUMS256.txt.asc \
-  && grep " node-v$NODE_VERSION-linux-x64.tar.xz\$" SHASUMS256.txt | sha256sum -c - \
-  && tar -xJf "node-v$NODE_VERSION-linux-x64.tar.xz" -C /usr/local --strip-components=1 \
-  && rm "node-v$NODE_VERSION-linux-x64.tar.xz" SHASUMS256.txt.asc SHASUMS256.txt \
-  && npm install -g npm@"$NPM_VERSION" \
-  && npm cache clear
+# Create the directory where the application will reside
+RUN mkdir -p $DIR_PATH
 
-ENV PATH $PATH:/nodejs/bin
+# Install dependency package
+RUN go get github.com/gin-gonic/gin && go get github.com/appleboy/gin-jwt && go get github.com/manucorporat/stats
 
-ADD . /go/src/github.com/thangchung/quizzer
+# Copy the application files (needed for production)
+ADD ./dist $DIR_PATH/dist
+ADD ./resources $DIR_PATH/resources
+ADD ./utils $DIR_PATH/utils
+ADD ./main.go $DIR_PATH/main.go
 
-WORKDIR /go/src/github.com/thangchung/quizzer
+# Set the working directory to the app directory
+WORKDIR $DIR_PATH
 
-# Document that the service listens on port 6868.
-EXPOSE 6868
+# Expose the 8080 port
+EXPOSE $PORT
 
-RUN npm run build
-
-CMD ["npm start"]
+# Execute the command on the main.go
+CMD ["go", "run", "main.go"]

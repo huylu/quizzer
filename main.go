@@ -6,11 +6,12 @@ package main
 import (
   "fmt"
   "runtime"
+  "os"
   "github.com/gin-gonic/gin"
   "github.com/thangchung/quizzer/utils"
 )
 
-const SERVER_PORT = ":6868"
+var SERVER_PORT = os.Getenv("PORT")
 
 func main() {
   ConfigRuntime()
@@ -53,6 +54,11 @@ func StartGin() {
   }
 
   // start server
+  if len(SERVER_PORT) <= 0 {
+    SERVER_PORT = ":6868"
+  } else {
+    SERVER_PORT = ":" + SERVER_PORT
+  }
   fmt.Printf("Application is running at http://localhost%s/", SERVER_PORT)
   router.Run(SERVER_PORT)
 }

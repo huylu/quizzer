@@ -1,8 +1,8 @@
 package utils
 
 import (
-  "github.com/appleboy/gin-jwt"
   "time"
+  "github.com/appleboy/gin-jwt"
   "github.com/gin-gonic/gin"
 )
 
@@ -11,7 +11,7 @@ func GetAuthMiddleware() *jwt.GinJWTMiddleware {
     Realm:"OQA",
     Key:[]byte("secret for OQA"),
     Timeout: time.Hour,
-    Authenticator: func(userId string, password string) (string, bool) {
+    Authenticator: func(userId string, password string, c *gin.Context) (string, bool) {
       if (userId == "admin" && password == "123456") || (userId == "test" && password == "123456") {
         return userId, true
       }
